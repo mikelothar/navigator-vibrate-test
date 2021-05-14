@@ -39,19 +39,6 @@ if (navigator.vibrate) {
   
 }, 1000);
 	  
-	  
-	  
-	  setInterval(function () {
-  const xxx = document.querySelector("#xxx");
-
-  if ("vibrate" in navigator) {
-    // vibration API supported
-    xxx.innerText = "has vibrate";
-    window.navigator.vibrate(50);
-  } else {
-    xxx.innerText = "has not vibrate";
-  }
-}, 1000);
 
   </script>
 </body>

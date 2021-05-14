@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Navigator Vibrate Test</title>
   <style>
-    html,
+html,
 body {
   height: 100%;
 }
@@ -17,29 +17,39 @@ body {
   align-items: center;
   font-size: 10vw;
   font-weight: bold;
+  flex-direction: column;
 }
   </style>
 </head>
 <body>
-  <div id="xxx"></div>
-  <script>
-setInterval(function () {
-  const xxx = document.querySelector("#xxx");
 
-  // enable vibration support
-navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+<div id="xxx"></div>
+
+<div>
+  <button>Click</button>
+</div>
+	
+<script>
+const button = document.querySelector("button");
+button.addEventListener("click", function () {
+  window.navigator.vibrate(50);
+});
+
+const xxx = document.querySelector("#xxx");
+
+// enable vibration support
+navigator.vibrate =
+  navigator.vibrate ||
+  navigator.webkitVibrate ||
+  navigator.mozVibrate ||
+  navigator.msVibrate;
 
 if (navigator.vibrate) {
-	// vibration API supported
+  // vibration API supported
   xxx.innerText = "has vibrate";
-    window.navigator.vibrate(50);
-  } else {
-    xxx.innerText = "has not vibrate";
-  }
-  
-}, 1000);
-	  
-
+} else {
+  xxx.innerText = "has not vibrate";
+}
   </script>
 </body>
 </html>
